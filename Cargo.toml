@@ -1,0 +1,14 @@
+[package]
+name = "lentrait"
+version = "0.1.0"
+edition = "2018"
+description = "A trait for implementing len(), hopefully replacing the unmaintained len_trait crate."
+license = "MIT OR Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+pyo3 = {version = "0.13.2", features = ["extension-module", "abi3-py36"]}
+len-trait = "0.6"
+serde = "1.0.126"
+serde_json = "1.0.64"
