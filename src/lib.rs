@@ -64,3 +64,9 @@ impl Len for &serde_json::Value {
         (*self).len()
     }
 }
+
+impl Len for mako::vocab::Vocab {
+    fn len(&self) -> usize {
+        self.num_tokens as usize
+    }
+}
