@@ -1,6 +1,6 @@
 # lentrait
 
-[![Current Crates.io Version](https://img.shields.io/crates/v/lentrait.svg)](https://crates.io/crates/lentrait)
+[![Current Crates.io Version](https://img.shields.io/crates/v/lentrait.svg?style=for-the-badge&logo=rust)](https://crates.io/crates/lentrait)
 
 This is a Len trait for Rust, providing a len() function.
 
