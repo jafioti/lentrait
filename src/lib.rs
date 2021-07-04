@@ -65,18 +65,6 @@ impl Len for &serde_json::Value {
     }
 }
 
-impl Len for mako::vocab::Vocab {
-    fn len(&self) -> usize {
-        self.len()
-    }
-}
-
-impl<D: Sync + Send + Clone, S: Sync + Send> Len for mako::dataloader::Dataloader<D, S> {
-    fn len(&self) -> usize {
-        self.len()
-    }
-}
-
 impl<K: Eq + Hash, V> Len for HashMap<K, V> {
     fn len(&self) -> usize {
         self.len()
