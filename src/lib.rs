@@ -2,6 +2,10 @@ use std::{collections::{BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, Linked
 
 pub trait Len {
     fn len(&self) -> usize;
+
+    fn is_empty(&self) -> bool {
+        self.len() == 0
+    }
 }
 
 // IMPLEMENTATIONS
@@ -41,24 +45,28 @@ impl<T> Len for [T] {
     }
 }
 
+#[cfg(feature = "pyo3")]
 impl Len for pyo3::PyAny {
     fn len(&self) -> usize {
         self.len().expect("Failed to get length!")
     }
 }
 
+#[cfg(feature = "pyo3")]
 impl Len for &pyo3::PyAny {
     fn len(&self) -> usize {
         (*self).len().expect("Failed to get length!")
     }
 }
 
+#[cfg(feature = "pyo3")]
 impl Len for serde_json::Value {
     fn len(&self) -> usize {
         self.to_owned().len()
     }
 }
 
+#[cfg(feature = "serde_crates")]
 impl Len for &serde_json::Value {
     fn len(&self) -> usize {
         (*self).len()
