@@ -45,6 +45,12 @@ impl<T> Len for [T] {
     }
 }
 
+impl<T, const N: usize> for [T;N] {
+    fn len(&self) -> usize {
+        N
+    }
+}
+
 #[cfg(feature = "pyo3")]
 impl Len for pyo3::PyAny {
     fn len(&self) -> usize {
