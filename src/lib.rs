@@ -45,7 +45,7 @@ impl<T> Len for [T] {
     }
 }
 
-impl<T, const N: usize> for [T;N] {
+impl<T, const N: usize> Len for [T;N] {
     fn len(&self) -> usize {
         N
     }
