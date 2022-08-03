@@ -53,6 +53,7 @@ impl<T> Len for [T] {
 }
 
 impl<T, const N: usize> Len for [T;N] {
+    #[inline(always)]
     fn len(&self) -> usize {
         N
     }
@@ -114,7 +115,7 @@ impl<T> Len for LinkedList<T> {
 impl Len for CStr {
     #[inline(always)]
     fn len(&self) -> usize {
-        self.as_ref().len()
+        self.to_bytes().len()
     }
 }
 
